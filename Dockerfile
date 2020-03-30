@@ -22,3 +22,4 @@ RUN apk add --update --no-cache \
 
 RUN apk add --no-cache asterisk-srtp asterisk-cdr-mysql
 
+RUN asterisk -v
