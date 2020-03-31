@@ -76,6 +76,13 @@ RUN apt-get update && \
     apt-get -y autoremove && \
     apt-get clean && \
     apt-get install -y make && \
-    rm -rf /var/lib/apt/lists/*
+    rm -rf /var/lib/apt/lists/* && \
 
+# Needed for Asterisk to work properly
+    chown asterisk. /var/run/asterisk && \
+    chown -R asterisk. /etc/asterisk && \
+    chown -R asterisk. /var/lib/asterisk && \
+    chown -R asterisk. /var/log/asterisk && \
+    chown -R asterisk. /var/spool/asterisk && \
+    chown -R asterisk. /usr/lib/asterisk
 
