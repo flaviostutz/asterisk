@@ -79,10 +79,13 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* && \
 
 # Needed for Asterisk to work properly
-    chown asterisk. /var/run/asterisk && \
-    chown -R asterisk. /etc/asterisk && \
-    chown -R asterisk. /var/lib/asterisk && \
-    chown -R asterisk. /var/log/asterisk && \
-    chown -R asterisk. /var/spool/asterisk && \
-    chown -R asterisk. /usr/lib/asterisk
+    chown -R asterisk:asterisk /var/run/asterisk && \
+    chown -R asterisk:asterisk /etc/asterisk && \
+    chown -R asterisk:asterisk /var/lib/asterisk && \
+    chown -R asterisk:asterisk /var/log/asterisk && \
+    chown -R asterisk:asterisk /var/spool/asterisk && \
+    chown -R asterisk:asterisk /var/run/asterisk && \
+    chown -R asterisk:asterisk /usr/lib/asterisk && \
+    touch /etc/asterisk/modules.conf && \
+    touch /etc/asterisk/cdr.conf
 
