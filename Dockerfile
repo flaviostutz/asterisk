@@ -70,7 +70,6 @@ RUN apt-get update && \
     make install && \
 
 # Cleanup 
-    mkdir -p /var/run/fail2ban && \
     cd / && \
     rm -rf /usr/src/* /tmp/* /etc/cron* && \
     apt-get purge -y $ASTERISK_BUILD_DEPS libspandsp-dev && \
