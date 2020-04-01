@@ -69,6 +69,17 @@ RUN apt-get update && \
     make && \
     make install && \
 
+# Needed for Asterisk to work properly
+    chown -R asterisk:asterisk /var/run/asterisk && \
+    chown -R asterisk:asterisk /etc/asterisk && \
+    chown -R asterisk:asterisk /var/lib/asterisk && \
+    chown -R asterisk:asterisk /var/log/asterisk && \
+    chown -R asterisk:asterisk /var/spool/asterisk && \
+    chown -R asterisk:asterisk /var/run/asterisk && \
+    chown -R asterisk:asterisk /usr/lib/asterisk && \
+    touch /etc/asterisk/modules.conf && \
+    touch /etc/asterisk/cdr.conf && \
+
 # Cleanup 
     cd / && \
     rm -rf /usr/src/* /tmp/* /etc/cron* && \
