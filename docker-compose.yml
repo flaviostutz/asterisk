@@ -4,7 +4,7 @@ services:
 
   asterisk:
     build: .
-    image: flaviostutz/asterisk
+    image: flaviostutz/asterisk:17.9.3
     ports:
       - 5060:5060/udp
       - 5160:5160/udp
